@@ -1,0 +1,7 @@
+table,rows,columns,column_names
+devices,66,7,"device_hash_id, source, station_hash_id, device_id, name, device_model, max_power"
+inverter_state_canonical,3,2,"canonical_state_id, description"
+inverter_state_mapping_fusionsolar,26,3,"state_id, description, canonical_state_id"
+inverter_state_mapping_solis,3,3,"state_id, description, canonical_state_id"
+source,2,2,"id, name"
+stations,7,8,"station_hash_id, source, station_id, name, location_str, location_latitude, location_longitude, plant_age_years"
