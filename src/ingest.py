@@ -1,7 +1,7 @@
 from pathlib import Path
 import requests
 
-# ---- parameters: the only lines you edit to get other data ----
+# ---- parameters----
 DATASET_ID = "4zgsckxpdy"
 VERSION = 2
 TARGET_DIR = Path("data/raw") / f"v{VERSION}"
@@ -33,14 +33,6 @@ def main():
             with open(local_path, "wb") as f:
                 f.write(response.content)
             print(f"Downloaded {file['filename']} ({file['size']} bytes)")   
-
-    # 3. Loop over the list. For each file:
-    #    a) local path = TARGET_DIR / file["filename"]
-    #    b) if that path exists AND its size equals file["size"]:
-    #         print "skipping", then continue   (idempotent!)
-    #    c) otherwise download content_details -> download_url
-    #       and save the bytes to the local path
-    #    d) print the filename and size so you can see progress
     pass
 
 
