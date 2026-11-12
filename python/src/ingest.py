@@ -4,7 +4,8 @@ import requests
 # ---- parameters----
 DATASET_ID = "4zgsckxpdy"
 VERSION = 2
-TARGET_DIR = Path("data/raw") / f"v{VERSION}"
+ROOT = Path(__file__).resolve().parents[2]
+TARGET_DIR = ROOT / "data" / "raw" / f"v{VERSION}"
 
 API_URL = (f"https://data.mendeley.com/public-api/datasets/"
            f"{DATASET_ID}/files?folder_id=root&version={VERSION}")
