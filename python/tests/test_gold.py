@@ -4,6 +4,9 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[2]
 GOLD = ROOT / "data" / "gold"
+if not GOLD.exists():
+    pytest.skip("data/gold not found: build the pipeline or download the data first",
+                allow_module_level=True)
 
 
 @pytest.fixture(scope="module")
