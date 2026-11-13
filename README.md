@@ -3,7 +3,6 @@
 [![CI](https://github.com/pnzavitsanos/solar-medallion/actions/workflows/ci.yml/badge.svg)](https://github.com/pnzavitsanos/solar-medallion/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.14-3776ab)
 ![pandas](https://img.shields.io/badge/pandas-3.1-150458)
-![DP-700](https://img.shields.io/badge/exam-DP--700-6250d6)
 
 Raw telemetry from **7 solar plants** and **two inverter vendors** (Huawei FusionSolar and Solis) goes through a
 **bronze → silver → gold** medallion pipeline and comes out as a tested star schema.
