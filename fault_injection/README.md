@@ -26,7 +26,7 @@ SOLAR/
 │   ├── README.md            this file
 │   └── inject_faults.py     the script
 └── data/                    (ignored by git, rebuilt by scripts)
-    ├── raw/v2/              untouched Mendeley download (src/ingest.py)
+    ├── raw/v2/              untouched Mendeley download (python/src/ingest.py)
     ├── landing/             messy vendor exports  <- Bronze reads this
     │   ├── fusionsolar/     fusionsolar_YYYY-MM-DD.csv, one per day
     │   └── solis/           solis_YYYY-MM-DD.csv, one per day
