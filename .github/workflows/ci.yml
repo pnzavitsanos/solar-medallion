@@ -10,8 +10,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-python@v5
         with:
           python-version: "3.14"
-      - run: pip install -r python/requirements-dev.txt
-      - run: pytest python/tests -v -rs
+
+      - name: Install packages
+        run: pip install -r python/requirements-dev.txt
+
+      - name: Download the landing data from the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download data-v1.0 --pattern landing-data-v1.0.zip --pattern SHA256SUMS.txt
+          grep landing-data-v1.0.zip SHA256SUMS.txt | sha256sum --check
+          unzip -q landing-data-v1.0.zip
+
+      - name: Build bronze, silver and gold
+        working-directory: python/notebooks
+        run: |
+          for nb in 02_bronze 03_silver 04_gold; do
+            jupyter nbconvert --to notebook --execute --output-dir "$RUNNER_TEMP" "$nb.ipynb"
+          done
+
+      - name: Run tests
+        run: pytest -v -rs
