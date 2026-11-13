@@ -169,4 +169,4 @@ licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). It is descri
 The data in this repository's release is a **modified** version: faults were injected on purpose by `fault_injection/inject_faults.py`.
 The original authors do not endorse this version.
 
-<sub>Built while preparing for the Microsoft DP-700 exam (Fabric Data Engineer Associate).</sub>
+
