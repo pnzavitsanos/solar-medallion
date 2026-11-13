@@ -33,7 +33,7 @@ import pandas as pd
 # Parameters
 # ---------------------------------------------------------------------------
 
-SEED = 700  # same seed = same faults on every run (and a nod to DP-700)
+SEED = 700  # same seed = same faults on every run
 
 # __file__ is the path of this script, so ROOT is found no matter which
 # folder you run it from: fault_injection/ -> one level up = SOLAR
